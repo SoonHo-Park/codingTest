@@ -3,7 +3,8 @@
 
 https://programmers.co.kr/learn/courses/30/lessons/92334
 
-```import java.util.*;
+```java
+import java.util.*;
 import java.util.stream.Collectors;
 
 class Solution {
