@@ -1,0 +1,37 @@
+num = [[3, 1], [0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2], [2, 0], [2, 1], [2, 2], [3, 0], [3, 2]]
+
+def solution(numbers, hand):
+    answer = ''
+    left = num[10]
+    right = num[11]
+    for i in numbers:
+        if i == 1 or i == 4 or i == 7:
+            answer += "L"
+            left = num[i]
+        elif i == 3 or i == 6 or i == 9:
+            answer += "R"
+            right = num[i]
+        elif i == 2 or i == 5 or i == 8 or i == 0:
+            leftLen = abs(left[0] - num[i][0]) + abs(left[1] - num[i][1])
+            rightLen = abs(right[0] - num[i][0]) + abs(right[1] - num[i][1])
+            if leftLen < rightLen:
+                answer += "L"
+                left = num[i]
+            elif leftLen > rightLen:
+                answer += "R"
+                right = num[i]
+            else:
+                if hand == "left":
+                    answer += "L"
+                    left = num[i]
+                elif hand == "right":
+                    answer += "R"
+                    right = num[i]
+    return answer
+
+
+
+
+# 1. 각 키패드를 2차원 배열로 미리 구성해놓고 
+# 2. left : 왼손, right : 오른손 으로 손의 움직임 저장 
+# 3. 2, 5, 8, 0 의 경우 배열에 저장된 값으로 거리 계산 후 L 또는 R로 움직임
