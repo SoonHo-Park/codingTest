@@ -1,0 +1,22 @@
+def solution(n, lost, reserve):
+    answer = 0
+    saved = 0
+    setLost = set(lost) - set(reserve)
+    setReserve = set(reserve) - set(lost) 
+    for i in setReserve:
+        if i-1 in setLost:
+            setLost.remove(i-1)
+        elif i+1 in setLost:
+            setLost.remove(i+1)
+    answer = n - len(setLost)
+    return answer
+
+
+
+# Set 자료형 :: 요소들이 순서대로 저장되어 있지 않아 index가 없음
+# for문을 읽을 때 무작위 순서로 나옴
+# 동일한 값의 요소가 1개 이상 존재할 수 없음(중복 허용 x)
+
+# 1. 여분이 있는 학생 중 도둑 맞은 학생은 제외
+# 2. 여분이 있는 학생들이 빌려줄 수 있는 학생이 있으면 빌려줌
+# 3. 마지막까지 체육복이 없는 학생 계산 
