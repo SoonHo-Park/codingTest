@@ -22,3 +22,8 @@
 1. 폰켓몬-프로그래머스, https://programmers.co.kr/learn/courses/30/lessons/1845
 2. 두 정수 사이의 합-프로그래머스, https://programmers.co.kr/learn/courses/30/lessons/12912
 3. 124 나라의 숫자-프로그래머스, https://programmers.co.kr/learn/courses/30/lessons/12899
+
+2022-04-07 ~ 2022-04-10
+1. 신규 아이디 추천-프로그래머스, https://programmers.co.kr/learn/courses/30/lessons/72410
+2. 숫자 문자열과 영단어-프로그래머스, https://programmers.co.kr/learn/courses/30/lessons/81301
+3. 키패드 누르기-프로그래머스, https://programmers.co.kr/learn/courses/30/lessons/67256
