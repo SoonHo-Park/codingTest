@@ -1,0 +1,11 @@
+def solution(nums):
+    answer = 0
+    max = int(len(nums)/2)
+    selected = []
+    for i in nums:
+        if i not in selected:
+            selected.append(i)
+        if len(selected) == max:
+            break
+    answer = len(selected)
+    return answer
