@@ -1,0 +1,11 @@
+def solution(a, b):
+    answer = 0
+    if a > b:
+        min = b
+        max = a
+    else:
+        min = a
+        max = b
+    for i in range(min, max+1):
+        answer += i
+    return answer

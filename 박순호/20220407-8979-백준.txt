@@ -1,0 +1,28 @@
+N, K = map(int, input().split(' '))
+medal = [[] for i in range(N+1)]
+
+for i in range(N):
+    k, g, s, b = map(int, input().split(' '))
+    medal[k] = [g, s, b]
+
+count = 1
+for i in medal:
+    if len(i) == 0:
+        continue
+    if i[0] > medal[K][0]:
+        count += 1
+        continue
+    if i[0] == medal[K][0]:
+        if i[1] > medal[K][1]:
+            count += 1
+            continue
+    if i[0] == medal[K][0]:
+        if i[1] == medal[K][1]:
+            if i[2] > medal[K][2]:
+                count += 1
+print(count)
+
+# 1. 각 나라의 순번을 medal 배열의 인덱스로, 성적을 값으로 저장받음
+# 2. 각 나라를 순회하며 순위가 궁금한 나라를 기준으로 금메달이 많은나라가 있으면 등수+1 => continue
+# 3. 금메달이 같고 은메달이 많은 나라가 있으면 등수 +1 => continue
+# 4. 금메달, 은메달이 같고 동메달이 많은 나라가 있으면 등수 +1
