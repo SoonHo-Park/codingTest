@@ -1,0 +1,21 @@
+N = list(input())
+check = N[0]
+count = 0
+flag = False
+for i in N:
+    if i != check:
+        if flag == False:
+            flag = True
+            continue
+        elif flag == True:
+            continue
+    if i == check:
+        if flag == True:
+            count += 1
+            flag = False
+        if flag == False:
+            continue
+if flag == True:
+    count += 1
+print(count)
+
