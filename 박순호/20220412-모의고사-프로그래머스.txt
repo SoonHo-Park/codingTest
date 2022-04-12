@@ -1,0 +1,44 @@
+def solution(answers):
+    answer = []
+    stu1 = [1, 2, 3, 4, 5]
+    stu2 = [2, 1, 2, 3, 2, 4, 2, 5]
+    stu3 = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]
+    stu1_r = 0
+    stu2_r = 0
+    stu3_r = 0
+    stu1_idx = 0
+    stu2_idx = 0
+    stu3_idx = 0
+    for i in answers:
+        if stu1[stu1_idx] == i:
+            stu1_r += 1
+        if stu2[stu2_idx] == i:
+            stu2_r += 1
+        if stu3[stu3_idx] == i:
+            stu3_r += 1
+        if stu1_idx == 4:
+            stu1_idx = 0
+        else:
+            stu1_idx += 1
+        if stu2_idx == 7:
+            stu2_idx = 0
+        else:
+            stu2_idx += 1
+        if stu3_idx == 9:
+            stu3_idx = 0
+        else:
+            stu3_idx += 1
+    stus = [stu1_r, stu2_r, stu3_r]
+    if max(stus) == stu1_r:
+        answer.append(1)
+    if max(stus) == stu2_r:
+        answer.append(2)
+    if max(stus) == stu3_r:
+        answer.append(3)
+    return answer
+
+
+## 학생들이 찍는 방법 : stu1, stu2, stu3
+## 정답을 맞춘 갯수 : stu1_r, stu2_r, stu3_r
+## 학생들이 찍는 방법이 담긴 배열을 순회하기 위한 인덱스 : stu1_idx, stu2_idx, stu3_idx
+## answers을 한번만 돌지만 각각의 학생이 찍는 방식과 방식이 1순회하면 인덱스를 초기화하는 방법으로 체크
