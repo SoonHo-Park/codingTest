@@ -1,0 +1,26 @@
+def solution(record):
+    
+    history = dict()
+    answer = []
+    for i in record:
+        splits = i.split(' ')
+        if splits[0] == "Leave":
+            continue
+        else:
+            history[splits[1]] = [splits[0], splits[2]]    
+
+    for j in record:
+        splits = j.split(' ')
+        S = ""
+        if splits[0] == "Leave":
+            S = history[splits[1]][1] + "님이 나갔습니다."
+            answer.append(S)
+        elif splits[0] == "Enter":
+            S = history[splits[1]][1] + "님이 들어왔습니다."
+            answer.append(S)
+    return answer
+
+
+## dictionary 자료형 사용
+## userId을 key로 하고 그 뒤의 행동을 value로 하여 history dictionary에 저장함 => userId가 같은 사람이 다른 닉네임으로 행동할 경우 최신 닉네임으로 덮어씌워짐
+## 첫번째 if인 "Leave"를 체크한 후 continue : Leave했다는 겄은 앞서 들어왔다는 것이므로 Leave행동 발생시에는 dict를 최신화하지 않음
