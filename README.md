@@ -17,6 +17,11 @@
 
 오프라인 풀이법 공유는 우선 수요일만 예정 
 
+2022-04-14 ~ 2022-04-17
+1. 메뉴리뉴얼(*권혁찬*) - 프로그래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/72411
+2. 최소직사각형(*박순호*) - 프로그래머스 레벨1, https://programmers.co.kr/learn/courses/30/lessons/86491
+3. 크레인인형뽑기게임(*김백준*) - 프로그래머스 레벨1, https://programmers.co.kr/learn/courses/30/lessons/64061
+
 
 2022-04-11 ~ 2022-04-14
 1. 모의고사 - 프로그래머스, https://programmers.co.kr/learn/courses/30/lessons/42840
