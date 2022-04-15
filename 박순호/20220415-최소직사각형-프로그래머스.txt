@@ -1,0 +1,13 @@
+def solution(sizes):
+    answer = 0
+    x = 0
+    y = 0
+    for i in sizes:
+        a = max(i)
+        b = min(i)
+        if x < a:
+            x = a
+        if y < b:
+            y = b
+    answer = x * y
+    return answer
