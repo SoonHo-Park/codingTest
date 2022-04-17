@@ -11,3 +11,15 @@ def solution(sizes):
             y = b
     answer = x * y
     return answer
+
+
+# x는 가장 큰 가로길이 y는 가장 작은 세로길이 
+# 각 카드를 순회하면서 max값, min값을 분리 기존의 x, y보다 크다면 x, y를 대체
+
+
+## 최다 풀이법 ##
+def solution(sizes):
+    return max(max(x) for x in sizes) * max(min(x) for x in sizes)
+
+# 접근 방식은 같음 size중 큰것만들 배열로 나타내어 그 중 가장 큰 값과
+# size중 작은 부분만을 배열로 나타내어 그 중 가장 작은 값의 곱
