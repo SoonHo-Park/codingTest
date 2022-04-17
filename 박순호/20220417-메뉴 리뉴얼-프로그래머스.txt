@@ -1,0 +1,40 @@
+import itertools
+
+def solution(orders, course):
+    answer = []
+    foods = [[] for _ in range(11)]
+    
+    # 주문한 내역을 정렬한 후에 course에 담긴 메뉴갯수 별로 combinations 조합 후 그 결과를 foods에 담음
+    for i in orders:
+        for j in course:
+            orderCk = list(itertools.combinations(sorted(i), j))
+            foods[int(j)].extend(orderCk)
+    result = ''
+    temp = 0
+    menuCk = dict()
+    
+    # 갯수별로 묶인 조합이 몇번씩 있는지 count
+    for k in course:
+        for m in foods[int(k)]:
+            s = ''.join(m)
+            if s in menuCk:
+                temp = menuCk[s]
+                temp += 1
+                menuCk[s] = temp
+            else:
+                menuCk[s] = 1
+                
+    # 앞에서 count된 갯수별 주문 중 max값과 같은 주문 내역을 결과값에 담음 
+    for i in course:
+        tempList = []
+        for j in menuCk:
+            if len(j) == i:
+                tempList.append(menuCk[j])
+        if len(tempList) > 0:
+            tempMax = max(tempList)
+            if tempMax > 1:
+                for k in menuCk:
+                    if len(k) == i and menuCk[k] == tempMax:
+                        answer.append(k)
+    answer.sort()
+    return answer
