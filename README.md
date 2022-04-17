@@ -16,6 +16,7 @@
 기간 내에 문제 못풀면 1문제당 3000원 벌금
 
 오프라인 풀이법 공유는 우선 목요일만 예정 
+
 2022-04-18 ~ 2022-04-20
 1. 짝지어 제거하기(권효집) - 프로그래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/12973
 2. 전화번호목록(김백준) - 프로그래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/42577
