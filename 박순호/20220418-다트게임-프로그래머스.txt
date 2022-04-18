@@ -1,0 +1,52 @@
+def solution(dartResult):
+    answer = 0
+    dartList = list(dartResult)
+    result = 0
+    idx = 0
+    resultList = []
+    for _ in range(3):
+        num = 0
+        pos = ''
+        spe = ''
+        for i in range(len(dartList)):
+            if dartList[0] == 'S' or dartList[0] == 'D' or dartList[0] == 'T':
+                pos = dartList[0]
+                dartList.pop(0)
+                if len(dartList) > 0:
+                    if dartList[0] == '*' or dartList[0] == '#':
+                        spe = dartList[0]
+                        dartList.pop(0)
+                        break
+                    else:
+                        break
+                else:
+                    break
+            else:
+                if dartList[1] not in ['S', 'D', 'T', '*', '#']:
+                    num = int(dartList[0]+dartList[1])    
+                    dartList.pop(0)
+                    dartList.pop(0)
+                else:
+                    num = int(dartList[0])
+                    dartList.pop(0)
+        if pos == 'S':
+            result = num
+        elif pos == 'D':
+            result = num * num
+        else:
+            result = num * num * num
+        resultList.append(result)
+        if spe == '*':
+            if idx == 0:
+                resultList[0] = resultList[0] * 2
+            else:
+                resultList[idx] = resultList[idx] * 2
+                resultList[idx-1] = resultList[idx-1] * 2
+        elif spe == '#':
+            resultList[idx] = -(resultList[idx])
+        idx += 1
+    answer = sum(resultList)
+    return answer
+
+
+# 개 피곤하다 빡구현

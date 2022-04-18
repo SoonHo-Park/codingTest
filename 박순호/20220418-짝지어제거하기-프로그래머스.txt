@@ -1,0 +1,17 @@
+def solution(s):
+    answer = 0
+    stack = []
+    for i in s:
+        if len(stack) == 0:
+            stack.append(i)
+        else:
+            if i == stack[-1]:
+                stack.pop()
+            else:
+                stack.append(i)
+    if len(stack) == 0:
+        answer = 1
+    return answer
+
+
+## stack 자료형을 이용함. 가장 늦게 쌓인 값과 새로 들어올 값을 비교하여 같으면 스택에서 제거
