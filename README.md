@@ -17,10 +17,15 @@
 
 오프라인 풀이법 공유는 우선 목요일만 예정 
 
+2022-04-21 ~ 2022-04-24
+1. 실패율(*박순호*) - 프로그래머스 레벨1, https://programmers.co.kr/learn/courses/30/lessons/42889
+2. 문자율압축(*권효집*) - 프로그래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/60057
+3. 카카오프렌즈 컬러링북(*김백준*) - 프로그래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/1829
+
 2022-04-18 ~ 2022-04-20
-1. 짝지어 제거하기(권효집) - 프로그래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/12973
-2. 전화번호목록(김백준) - 프로그래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/42577
-3. 다트게임(권혁찬) - 프로그래머스 레벨1, https://programmers.co.kr/learn/courses/30/lessons/17682
+1. 짝지어 제거하기(*권효집*) - 프로그래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/12973
+2. 전화번호목록(*김백준*) - 프로그래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/42577
+3. 다트게임(*권혁찬*) - 프로그래머스 레벨1, https://programmers.co.kr/learn/courses/30/lessons/17682
 
 2022-04-14 ~ 2022-04-17
 1. 메뉴리뉴얼(*권혁찬*) - 프로그래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/72411
