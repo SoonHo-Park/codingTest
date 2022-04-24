@@ -1,0 +1,41 @@
+#원래 풀이법
+
+import operator
+
+def solution(N, stages):
+    answer = []
+    results = dict()
+    for i in range(1, N+1):
+        if len(stages) != 0:
+            fails = []
+            count = 0
+            for j in stages:
+                if i >= j:
+                    fails.append(j)
+            for k in fails:
+                stages.remove(k)
+                count += 1
+            results[i] = count / (len(stages)+count)
+        else:
+            results[i] = 0
+    return sorted(results, key=lambda i: results[i], reverse=True)
+
+
+# 한가지 잘못 생각을 했던게, 단계별로 stages의 값들과 비교하면서 stages의 값들을 제거하면서 클리어하지 못한 플레이어 수를 계산하려고 했음
+# 근데 그렇게 하면 불필요한 계산이 너무 많아 시간 초과 발생
+# 풀이법 참조하여 해결하였고 결과적으로는
+# stages의 길이를 미리 계산해준 뒤, 각 단계별로 stages와 비교하여 클리어하지 못한 플레이어를 계산하고 미리 계산된 길이에서 제거
+
+# 풀이법 참조
+
+def solution(N, stages):
+    answer = []
+    results = dict()
+    count = len(stages)
+    for i in range(1, N+1):
+        if count != 0:
+            results[i] = stages.count(i) / count
+            count -= stages.count(i)
+        else:
+            results[i] = 0
+    return sorted(results, key=lambda i: results[i], reverse=True)

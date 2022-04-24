@@ -1,0 +1,23 @@
+# 원래 풀이는 각각의 절반인 부분이 0으로 나눠떨어지면 반으로 접을 수 있으니까 등등
+# 규칙을 계속 찾아보다가 실패함
+
+def solution(w,h):
+    answer = 0
+    cut = 0
+    maxValue = w * h
+    while True:
+        if w%2 == 0 and h%2 == 0:
+            w = w/2
+            h = h/2
+            cut += 1
+        else:
+            break
+    answer = maxValue - ((w + h - 1) * cut * 2)
+    return answer
+
+
+# 규칙 찾아보고 쌩쑈 하다가 그냥 수학 규칙이래서 풀이법 아래 참조
+import math
+
+def solution(w,h):
+    return (w*h) - (w+h-math.gcd(w, h))
