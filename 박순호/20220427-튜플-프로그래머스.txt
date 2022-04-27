@@ -1,0 +1,31 @@
+def solution(s):
+    answer = []
+    sList = list(s)
+    sList.pop(0)
+    sList.pop(-1)
+    numbers = dict()
+    nums = []
+    number = ''
+    for i in sList:
+        if i == '{':
+            continue
+        elif i == ',':
+            if number != '':
+                nums.append(number)
+                number = ''
+        elif i == '}':
+            if number != '':
+                nums.append(number)
+                number = ''
+            numbers[len(nums)] = nums
+            nums = []
+        else:
+            if number != '':
+                number += i
+            else:
+                number = i
+    for key, value in sorted(numbers.items()):
+        for i in value:
+            if int(i) not in answer:
+                answer.append(int(i))
+    return answer
