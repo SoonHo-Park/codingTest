@@ -1,0 +1,64 @@
+def solution(places):
+    answer = []
+    
+    # 각 거리두기 반복하며 체크
+    for place in places:
+        idx = 0
+        people = []
+        P = [[0 for i in range(5)] for _ in range(5)]
+        
+        # 좌석도 2차원배열화, 사람들이 앉은 자리 리스트에 담기
+        for i in place:
+            tempI = list(i)
+            for j in range(len(tempI)):
+                P[idx][j] = tempI[j]
+                if tempI[j] == 'P':
+                    people.append([idx, j])
+            idx += 1
+        count = 1
+        result = 1
+        flag = True
+        for k in people:
+            for p in range(count, len(people)):
+                if 2 >= abs(k[0] - people[p][0]) + abs(k[1] - people[p][1]):
+                    if chk(k, people[p], P):
+                        result = 0
+                        flag=False
+                        break
+            if flag == False:
+                break
+            count += 1
+        answer.append(result)
+    return answer
+
+def chk(x, y, P):
+    xList = []
+    yList = []
+    xList.append(x[0])
+    if y[0] not in xList:
+        xList.append(y[0])
+    yList.append(x[1])
+    if y[1] not in yList:
+        yList.append(y[1])
+    
+    if len(xList) == 2:
+        num = int(sum(xList)/2)
+        if num not in xList:
+            xList.insert(1, num)
+    if len(yList) == 2:
+        num = int(sum(yList)/2)
+        if num not in yList:
+            yList.insert(1, num)
+    xList.sort()
+    yList.sort()
+    kkk = False
+    for a in xList:
+        for b in yList:
+            # 벽이 쳐있어야 할 곳에 빈 테이블이 있으면 방역수칙 위반
+            if P[a][b] == 'O':
+                return True
+            # 검사도중 X가 한번도 안나온거는 바로 옆에 붙은거임 방역수칙 위반
+            elif P[a][b] == 'X':
+                kkk = True
+    if kkk == False:
+        return True
