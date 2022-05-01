@@ -17,6 +17,11 @@
 
 오프라인 풀이법 공유는 우선 목요일만 예정 
 
+2022-04-28 ~ 2022-05-01
+1. 괄호 변환(*권효집*) - 프로프래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/60058
+2. 순위 검색(*김백준*) - 프로프래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/72412
+3. 삼각 달팽이(*권혁찬*) - 프로프래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/68645
+
 
 2022-04-28 ~ 2022-05-01
 1. 양궁대회(*박순호*) - 프로프래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/92342
