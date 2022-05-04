@@ -1,0 +1,69 @@
+def solution(n):
+    answer = []
+    
+    # N x N 크기의 2차원배열 생성
+    tList = [[0 for i in range(n)] for i in range(n)]
+    idx = 0
+    
+    # 달팽이에 해당하는 부분만 -1로 변경
+    for t in tList:
+        idx += 1
+        for k in range(idx):
+            t[k] = -1
+    
+    
+    x, y = 0, 0
+    num = 1
+    tList[x][y] = num
+    num += 1
+    behave = 'down'
+    check = 0
+    
+    # 달팽이를 돔
+    while True:
+        if check == 2:
+            break
+        if behave == 'down':
+            try:
+                if tList[x+1][y] == -1:
+                    tList[x+1][y] = num
+                    x += 1
+                    num += 1
+                    check = 0
+                else:
+                    behave = 'right'    
+                    check += 1
+            except IndexError:
+                behave = 'right'
+                check += 1
+        elif behave == 'right':
+            try:
+                if tList[x][y+1] == -1:
+                    tList[x][y+1] = num
+                    y += 1
+                    num += 1
+                    check = 0
+                else:
+                    behave = 'up'   
+                    check += 1
+            except IndexError:
+                behave = 'up'   
+                check += 1
+        elif behave == 'up':
+            if tList[x-1][y-1] == -1:
+                tList[x-1][y-1] = num
+                x -= 1
+                y -= 1
+                num += 1
+                check = 0
+            else:
+                behave = 'down'
+                check += 1
+                
+    # 달팽이만 출력
+    idx = 0
+    for t in tList:
+        idx += 1
+        for k in range(idx):
+            answer.append(t[k])
+    return answer
