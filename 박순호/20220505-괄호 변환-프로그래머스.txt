@@ -1,0 +1,59 @@
+def solution(p):
+    answer = ''
+    # 올바른 문자열은 바로 리턴
+    if check(p):
+        return p
+    answer = main(p)
+    return answer
+
+def uAndv(w):
+    countL, countR = 0, 0
+    for i in range(len(w)):
+        if w[i] == '(':
+            countL += 1
+        else:
+            countR += 1
+        if countL == countR:
+            u = w[:i+1]
+            if i+1 < len(w):
+                v = w[countL+countR:]
+            else:
+                v = []
+            break
+    return u, v
+
+def check(w):
+    checkS = []
+    for word in w:
+        if word == '(':
+            checkS.append(word)
+        elif word == ')':
+            if not len(checkS):
+                return False
+            elif checkS[-1] == '(':
+                checkS.pop()
+    if len(checkS) == 0:
+        return True
+    else:
+        return False
+    
+def main(w):
+    result = ""
+    if len(w) == 0:
+        return ""
+    u, v = uAndv(w)
+    if check(u):
+        result = u + main(v)
+    else:
+        tempS = "("
+        tempS += main(v)
+        tempS += ")"
+        u = u[1:-1]
+        for word in u:
+            if word == '(':
+                tempS += ')'
+            else:
+                tempS += '('
+        result += tempS
+    return result
+                
