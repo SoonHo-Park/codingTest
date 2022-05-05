@@ -17,6 +17,11 @@
 
 오프라인 풀이법 공유는 우선 목요일만 예정 
 
+2022-05-05 ~ 2022-05-08
+1. 기능개발(*권효집*) - 프로프래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/42586
+2. 행렬 테두리 회전하기(*김백준*) - 프로프래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/77485
+3. [1차] 뉴스 클러스터링(*박순호*) - 프로프래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/17677
+
 2022-05-02 ~ 2022-05-04
 1. 괄호 변환(*권효집*) - 프로프래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/60058
 2. 순위 검색(*김백준*) - 프로프래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/72412
