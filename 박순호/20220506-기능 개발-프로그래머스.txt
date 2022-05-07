@@ -1,0 +1,20 @@
+def solution(progresses, speeds):
+    answer = []
+    while True:
+        complete = 0
+        count = True
+        for i in range(len(progresses)):
+            progresses[i] += speeds[i]
+            if count:
+                if progresses[i] >= 100:
+                    complete += 1
+                else:
+                    count = False
+        if complete != 0:
+            answer.append(complete)
+            for i in range(complete):
+                progresses.pop(0)
+                speeds.pop(0)
+        if len(progresses) == 0:
+            break
+    return answer
