@@ -1,0 +1,65 @@
+def solution(rows, columns, queries):
+    answer = []
+    arrays = [[0 for _ in range(columns)] for _ in range(rows)]
+    num = 1
+    
+    # 2차원 배열 생성
+    for i in range(rows):
+        for j in range(columns):
+            arrays[i][j] = num
+            num += 1
+            
+    # 행렬 회전을 위해 쿼리를 순회
+    for query in queries:
+        x1, y1, x2, y2 = query[0], query[1], query[2], query[3]
+        target = []
+        targetNum = []
+        now = [x1, y1]
+        target.append([now[0], now[1]])
+        targetNum.append(arrays[now[0]-1][now[1]-1])
+        mode = 'right'
+        
+        # 순회할 target이 되는 인덱스와 값 뽑아내기
+        while True:
+            if mode == 'right':
+                if now[1] == y2:
+                    mode = 'down'
+                else:
+                    now[1] += 1
+                    target.append([now[0], now[1]])
+                    targetNum.append(arrays[now[0]-1][now[1]-1])
+            elif mode == 'down':
+                if now[0] == x2:
+                    mode = 'left'
+                else:
+                    now[0] += 1
+                    target.append([now[0], now[1]])
+                    targetNum.append(arrays[now[0]-1][now[1]-1])
+            elif mode == 'left':
+                if now[1] == y1:
+                    mode = 'up'
+                else:
+                    now[1] -= 1
+                    target.append([now[0], now[1]])
+                    targetNum.append(arrays[now[0]-1][now[1]-1])
+            elif mode == 'up':
+                if now[0] ==x1:
+                    break
+                else:
+                    now[0] -= 1
+                    target.append([now[0], now[1]])
+                    targetNum.append(arrays[now[0]-1][now[1]-1])
+        
+        # 타겟을 뽑아낸 후 값을 하나씩 뒤로 옮기기
+        targetNum.pop()
+        target.pop()
+        tempNum = targetNum.pop()
+        targetNum.insert(0, tempNum)
+        answer.append(min(targetNum))
+        idx = 0
+        
+        # 옮긴 값을 다시 2차원 배열에 적용
+        for k in target:
+            arrays[k[0]-1][k[1]-1] = targetNum[idx]
+            idx += 1
+    return answer
