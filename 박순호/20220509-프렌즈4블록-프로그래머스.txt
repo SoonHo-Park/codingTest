@@ -1,0 +1,53 @@
+def solution(m, n, board):
+    answer = 0
+    blocks = [[0 for _ in range(m)] for _ in range(n)]
+    mLen, nLen = m, n
+    
+    # 블록을 조작하기 편하도록 인덱스 조정하여 저장
+    for brd in board:
+        tempList = list(brd)
+        mLen -= 1
+        nLen = 0
+        for word in tempList:
+            blocks[nLen][mLen] = word
+            nLen += 1
+            
+            
+    while True:
+        
+        # 삭제 대상이 있는지 체크
+        target = list()
+        for i in range(0, n-1):
+            for j in range(0, m-1):
+                if blocks[i][j] == blocks[i][j+1] == blocks[i+1][j] == blocks[i+1][j+1]:
+                    if blocks[i][j] != 0:
+                        if [i, j] not in target:
+                            target.append([i, j])
+                        if [i, j+1] not in target:
+                            target.append([i, j+1])
+                        if [i+1, j] not in target:
+                            target.append([i+1, j])
+                        if [i+1, j+1] not in target:
+                            target.append([i+1, j+1])
+        
+        # 삭제 대상이 있으면 0으로 치환
+        if len(target) != 0:
+            answer += len(target)
+            for delete in target:
+                blocks[delete[0]][delete[1]] = 0
+            # blocks중 0이 있으면 제거 후 제거한 만큼 뒤에 0을 추가해줌
+            for block in blocks:
+                count = 0
+                while True:
+                    if 0 in block:
+                        block.remove(0)
+                        count += 1
+                    else:
+                        break
+                for plus in range(count):
+                    block.append(0)
+                    
+        # 없으면 while문 종료
+        else:
+            break
+    return answer
