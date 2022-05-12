@@ -17,6 +17,11 @@
 
 오프라인 풀이법 공유는 우선 목요일만 예정 
 
+2022-05-12 ~ 2022-05-15
+1. 프린터(*김백준*) - 프로그래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/42587
+2. 게임맵최단거리(*박순호*) - 프로그래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/1844
+3. 배달(*권혁찬*) - 프로그래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/12978ㄴ
+
 2022-05-09 ~ 2022-05-11
 1. 프렌즈4블록(*권효집*) - 프로그래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/17679
 2. 수식 최대화(*박순호*) - 프로그래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/67257
