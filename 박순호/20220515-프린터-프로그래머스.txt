@@ -1,0 +1,30 @@
+def solution(priorities, location):
+    answer = 0
+    flag = True
+    flag2 = False
+    list = []
+    for index in range(len(priorities)):
+        list.append(index)
+    while flag:
+        flag2 = False
+        for index in range(len(priorities)):
+            if priorities[0] < priorities[index]:
+                flag2 = True
+        if flag2 == True:
+            temp = priorities[0]
+            del priorities[0]
+            priorities.append(temp)
+            temp2 = list[0]
+            del list[0]
+            list.append(temp2)
+        else:
+            if list[0] == location:
+                flag = False
+                answer += 1
+            else:
+                del priorities[0]
+                del list[0]
+                answer += 1
+        if not priorities:
+            flag = False
+    return answer
