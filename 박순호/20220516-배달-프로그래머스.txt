@@ -1,0 +1,39 @@
+import heapq
+
+
+def solution(N, road, K):
+    answer = 0
+    graph = [[] for _ in range(N+1)]
+    global distance 
+    
+    # 각 지점까지의 거리를 저장할 list => 무한대로 초기화
+    distance = [int(1e9)] * (N+1)
+    
+    # 시작지점
+    start = 1
+    
+    for r in road:
+        # 방향이 없는 그래프이기 때문에 양방향 입력
+        graph[r[0]].append([r[1], r[2]])
+        graph[r[1]].append([r[0], r[2]])
+    dajkstra(start, graph)
+    
+    for i in distance:
+        if i <= K:
+            answer += 1
+    return answer
+
+def dajkstra(start, graph):
+    global distance
+    q = []  # 방문한 노드를 입력할 heapq
+    heapq.heappush(q, (0, start))   # 시작지점 입력
+    distance[start] = 0             # 시작지점은 거리가 0
+    while q:
+        dist, now = heapq.heappop(q)
+        if distance[now] < dist:    # 이미 방문한 노드이고 거리가 짧으면 다음으로 넘어감
+            continue
+        for i in graph[now]:
+            cost = dist + i[1]
+            if cost < distance[i[0]]:
+                distance[i[0]] = cost
+                heapq.heappush(q, (cost, i[0]))

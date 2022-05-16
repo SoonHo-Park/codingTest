@@ -1,0 +1,30 @@
+import collections
+
+def solution(maps):
+    answer = 0
+    
+    # maps의 가로, 세로 길이
+    n = len(maps)
+    m = len(maps[0])
+    
+    # 상하 좌우를 간편하게 확인하기 위한 dict
+    dic = {0:[-1, 0], 1:[0, 1], 2:[1, 0], 3:[0, -1]}
+    
+    # 방문 여부를 확인하기 위한 table 생성
+    table = [[-1] * m for _ in range(n)]
+    table[0][0] = 1
+    
+    # queue자료형 생성
+    q = collections.deque([[0, 0]])
+    
+    # queue가 빌때까지 반복, 방문할 노드가 없을 때 까지
+    while q:
+        x, y = q.popleft()
+        for i in range(4):
+            nx = x + dic[i][0]
+            ny = y + dic[i][1]
+            if 0 <= nx < n and 0 <= ny < m and maps[nx][ny] != 0:
+                if table[nx][ny] == -1:
+                    table[nx][ny] = table[x][y] + 1
+                    q.append([nx, ny])
+    return table[-1][-1]
