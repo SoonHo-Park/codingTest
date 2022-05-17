@@ -1,0 +1,15 @@
+def solution(s):
+    answer = True
+    stack = list()
+    for i in s:
+        if i == '(':
+            stack.append(i)
+        else:
+            if len(stack) == 0:
+                return False
+            if stack[-1] == ')':
+                return False
+            stack.pop()
+    if len(stack) != 0:
+        return False
+    return True

@@ -1,0 +1,10 @@
+def solution(s):
+    answer = ''
+    sList = s.split()
+    S = list()
+    for i in range(len(sList)):
+        S.append(int(sList[i]))
+    answer += str(min(S))
+    answer += ' '
+    answer += str(max(S))
+    return answer
