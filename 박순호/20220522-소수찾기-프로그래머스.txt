@@ -1,0 +1,25 @@
+import itertools
+def solution(numbers):
+    answer = 0
+    number = list(numbers)
+    numList = []
+    numList2 = []
+    for i in range(len(number)):
+        numList = list(itertools.permutations(number, i+1))
+        for j in numList:
+            s = int(''.join(j))
+            if s not in numList2:
+                numList2.append(s)
+    for k in numList2:
+        if checkPrime(k) == True:
+            answer += 1
+    return answer
+
+def checkPrime(k):
+    if k > 1:
+        for i in range(2, int(k/2)+1):
+            if (k % i) == 0:
+                return False
+        return True
+    else:
+        return False
