@@ -1,0 +1,45 @@
+import collections
+
+def solution(s):
+    answer = []
+    s = list(s)
+    count = 0
+    turn = 0
+    while True:
+        if len(s) == 1:
+            break
+        s, count = remove0(s, count)
+        c = len(s)
+        tempList = collections.deque() # 시간복잡도
+        if len(s) == 1:
+            break
+        while True:
+            x, y = calc(c)
+            if x == 1:
+                tempList.appendleft(str(y))
+                tempList.appendleft(str(x))
+                break
+            else:
+                tempList.appendleft(str(y))
+                c = x
+        s = list(tempList)
+        turn += 1
+    answer = [turn+1, count]
+    return answer
+
+# 0을 제거하는 함수
+def remove0(s, count):
+    s.sort() # 시간복잡도
+    while True:
+        if s[0] == '0':
+            s.pop(0)
+            count += 1
+        else:
+            break
+    return s, count
+
+# 몫과 나머지 구하기
+def calc(c):
+    x = c // 2
+    y = c % 2
+    return x, y
