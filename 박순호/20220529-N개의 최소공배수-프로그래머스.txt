@@ -1,0 +1,15 @@
+def solution(arr):
+    answer = 0
+    maxValue = 1
+    for i in arr:
+        maxValue = maxValue * i
+    for i in range(max(arr), maxValue+1):
+        flag = True
+        for j in arr:
+            if i % j != 0:
+                flag = False
+                break
+        if flag:
+            answer = i
+            break
+    return answer
