@@ -17,6 +17,11 @@
 
 오프라인 풀이법 공유는 우선 목요일만 예정 
 
+2022-05-30 ~ 2022-06-01
+1. 모음사전(*권혁찬*) - 프로그래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/84512
+2. 주차요금계산(*박순호*) - 프로그래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/92341
+3. 피보나치수(*김백준*) - 프로그래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/12945
+
 2022-05-23 ~ 2022-05-25
 1. 카펫(*권혁찬*) - 프로그래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/42842
 2. 이진 변환 반복하기(*박순호*) - 프로그래머스 레벨2 https://programmers.co.kr/learn/courses/30/lessons/70129
