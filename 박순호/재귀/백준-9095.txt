@@ -1,0 +1,23 @@
+global result
+
+def calc(now, plus, num):
+    global result
+    if now + plus == num:
+        result += 1
+        return
+    elif now + plus > num:
+        return
+    else:
+        calc(now+plus, 1, num)
+        calc(now+plus, 2, num)
+        calc(now+plus, 3, num)
+        
+M = int(input())
+
+for i in range(M):
+    result = 0
+    num = int(input())
+    calc(0, 1, num)
+    calc(0, 2, num)
+    calc(0, 3, num)
+    print(result)
