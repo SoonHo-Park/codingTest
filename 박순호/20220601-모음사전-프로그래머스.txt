@@ -1,0 +1,27 @@
+global result
+result = 0
+global answer
+answer = 0
+def solution(word):
+    global answer
+    recursive_call("A", word)
+    recursive_call("E", word)
+    recursive_call("I", word)
+    recursive_call("O", word)
+    recursive_call("U", word)
+    return answer
+
+def recursive_call(W, word):
+    global result
+    result += 1
+    if W == word:
+        global answer
+        answer = result
+        return
+    if len(W) == 5:
+        return
+    recursive_call(W + "A", word)
+    recursive_call(W + "E", word)
+    recursive_call(W + "I", word)
+    recursive_call(W + "O", word)
+    recursive_call(W + "U", word)
