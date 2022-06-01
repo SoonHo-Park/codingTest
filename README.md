@@ -16,6 +16,10 @@
 기간 내에 문제 못풀면 1문제당 3000원 벌금
 
 오프라인 풀이법 공유는 우선 목요일만 예정 
+2022-06-02 ~ 2022-06-05
+1. 하노이의 탑(*권혁찬*) - 프로그래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/12946
+2. JadenCase 문자열 만들기(*권효집*) - 프로그래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/12951
+3. [3차]압축 - 프로그래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/17684
 
 2022-05-30 ~ 2022-06-01
 1. 모음사전(*권혁찬*) - 프로그래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/84512
