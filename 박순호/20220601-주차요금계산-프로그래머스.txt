@@ -1,0 +1,42 @@
+def solution(fees, records):
+    answer = []
+    car = dict()
+    result = dict()
+    for record in records:
+        time, number, action = record.split(' ')
+        if action == 'IN':
+            temp = list()
+            temp.append(time)
+            car[number] = temp
+        else:
+            h1, m1 = car[number][0].split(':')
+            h2, m2 = time.split(':')
+            calcTime = ((int(h2) * 60 ) + int(m2) ) - ((int(h1) * 60 ) + int(m1) )
+            if number in result.keys():
+                temp = result[number]
+                temp += calcTime
+                result[number] = temp
+            else:
+                result[number] = calcTime
+            del car[number]
+    for num in car.keys():
+        h, m = car[num][0].split(':')
+        calcTime = 1439 - ((int(h) * 60 ) + int(m) )
+        if num in result.keys():
+            temp = result[num]
+            temp += calcTime
+            result[num] = temp
+        else:
+            result[num] = calcTime
+    for num in sorted(result):
+        price = 0
+        if result[num] <= fees[0]:
+            price += fees[1]
+        else:
+            result[num] = result[num] - fees[0]
+            price += fees[1]
+            price += (result[num]//fees[2]) * fees[3]
+            if result[num]%fees[2] != 0:
+                price += fees[3]
+        answer.append(price)
+    return answer
