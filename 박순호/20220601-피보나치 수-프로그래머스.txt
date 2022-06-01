@@ -1,0 +1,9 @@
+def solution(n):
+    answer = 0
+    hueristic = [0 for i in range(100001)]
+    hueristic[0] = 0
+    hueristic[1] = 1
+    for i in range(2, 100001):
+        hueristic[i] = hueristic[i-1] + hueristic[i-2]
+        if i == n:
+            return hueristic[n] % 1234567        
