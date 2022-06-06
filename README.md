@@ -17,6 +17,11 @@
 
 오프라인 풀이법 공유는 우선 목요일만 예정 
 
+2022-06-06 ~ 2022-06-08
+1. 예상 대진표(*박순호*) - 프로그래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/12985
+2. 후보키(*김백준*) - 프로그래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/42890
+3. 괄호 회전하기(*권효집*) - 프로그래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/76502
+
 2022-06-02 ~ 2022-06-05
 1. 하노이의 탑(*권혁찬*) - 프로그래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/12946
 2. JadenCase 문자열 만들기(*권효집*) - 프로그래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/12951
