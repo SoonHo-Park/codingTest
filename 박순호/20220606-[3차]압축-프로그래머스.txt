@@ -1,0 +1,32 @@
+global words 
+words = [0, 'A', 'B', 'C', 'D', 'E' ,'F' ,'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O' ,'P' ,'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+
+def solution(msg):
+    answer = []
+    msg = list(msg)
+    while True:
+        if len(msg) == 0:
+            print(words)
+            break
+        idx = 0
+        word = msg[idx]
+        temp = msg[idx]
+        while True:
+            try:
+                idx += 1
+                word += msg[idx]
+                if word in words:
+                    temp += msg[idx]
+                    continue
+                else:
+                    words.append(word)
+                    answer.append(words.index(temp))
+                    for i in range(idx):
+                        msg.pop(0)
+                    break
+            except IndexError:
+                answer.append(words.index(word))
+                for i in range(idx):
+                    msg.pop(0)
+                break
+    return answer
