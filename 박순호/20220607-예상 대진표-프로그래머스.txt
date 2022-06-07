@@ -1,0 +1,36 @@
+def solution(n,a,b):
+    answer = 0
+    member = [i+1 for i in range(n)]
+    while True:
+        # 전체 멤버를 반으로 쪼갬
+        memberA = member[:int(len(member)/2)]
+        memberB = member[int(len(member)/2):]
+        
+        # 서로 상대의 진영에 있으면 결승에서 만남
+        if a in memberA and b in memberB:
+            count = 1
+            length = len(member)
+            while True:
+                if length == 2:
+                    break
+                length = length//2
+                count += 1
+            answer = count
+            break
+        if b in memberA and a in memberB:
+            count = 1
+            length = len(member)
+            while True:
+                if length == 2:
+                    break
+                length = length//2
+                count += 1
+            answer = count
+            break
+            
+        # 서로 같은 진영에 있으면 상대 진영에 있을때까지 쪼갬
+        if a in memberA and b in memberA:
+            member = memberA
+        if a in memberB and b in memberB:
+            member = memberB
+    return answer

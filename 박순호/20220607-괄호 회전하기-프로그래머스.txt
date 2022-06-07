@@ -1,0 +1,39 @@
+def solution(s):
+    answer = 0
+    s = list(s)
+    if len(s) == 1:
+        return answer
+    for i in range(len(s)):
+        if check(s):
+            answer += 1
+        temp = s.pop(0)
+        s.append(temp)
+    return answer
+
+def check(s):
+    tempList = [0]
+    for i in s:
+        if i == ']':
+            if tempList[-1] == '[':
+                tempList.pop()
+            else:
+                return False
+        if i == '}':
+            if tempList[-1] == '{':
+                tempList.pop()
+            else:
+                return False
+        if i == ')':
+            if tempList[-1] == '(':
+                tempList.pop()
+            else:
+                return False
+        if i == '[':
+            tempList.append(i)
+        elif i == '(':
+            tempList.append(i)
+        elif i == '{':
+            tempList.append(i)
+    if len(tempList) > 1:
+        return False
+    return True
