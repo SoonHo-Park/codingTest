@@ -1,0 +1,102 @@
+position = list(input().split(' '))
+
+rows = ['8', '7', '6', '5', '4', '3', '2', '1']
+cols = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+
+# KING
+a, b = list(position[0])
+kRows = rows.index(b)
+kCols = cols.index(a)
+
+#STONE
+a, b = list(position[1])
+sRows = rows.index(b)
+sCols = cols.index(a)
+
+N = int(position[2])
+for i in range(N):
+    move = input()
+    move = list(move)
+
+    if len(move) == 1:
+        if move[0] == 'R':
+            if kCols + 1 < 8:
+                if kCols + 1 == sCols and kRows == sRows:
+                    if sCols + 1 < 8:
+                        kCols += 1
+                        sCols += 1
+                else:
+                    kCols += 1
+          
+        elif move[0] == 'L':
+            if kCols - 1 >= 0:
+                if kCols - 1 == sCols and kRows == sRows:
+                    if sCols - 1 >= 0:
+                        kCols -= 1
+                        sCols -= 1
+                else:
+                    kCols -= 1
+        
+        elif move[0] == 'T':
+            if kRows -1 >= 0:
+                if kRows -1 == sRows and kCols == sCols:
+                    if sRows -1 >= 0:
+                        kRows -= 1
+                        sRows -= 1
+                else:
+                    kRows -= 1
+        elif move[0] == 'B':
+            if kRows + 1 < 8:
+                if kRows + 1 == sRows and kCols == sCols:
+                    if sRows + 1 < 8:
+                        kRows += 1
+                        sRows += 1
+                else:
+                    kRows += 1
+    else:
+        if move[0] == 'R' and move[1] == 'T':
+            if kCols +1 < 8 and kRows - 1 >= 0:
+                if kCols + 1 == sCols and kRows - 1 == sRows:
+                    if sCols +1 < 8 and sRows - 1 >= 0:
+                        kCols += 1
+                        sCols += 1
+                        kRows -= 1
+                        sRows -= 1
+                else:
+                    kCols += 1
+                    kRows -= 1
+        if move[0] == 'L' and move[1] == 'T':
+            if kCols -1 >= 0 and kRows - 1 >= 0:
+                if kCols - 1 == sCols and kRows - 1 == sRows:
+                    if sCols -1 >= 0 and sRows - 1 >= 0:
+                        kCols -= 1
+                        sCols -= 1
+                        kRows -= 1
+                        sRows -= 1
+                else:
+                    kCols -= 1
+                    kRows -= 1
+        if move[0] == 'R' and move[1] == 'B':
+            if kCols +1 < 8 and kRows +1 < 8:
+                if kCols + 1 == sCols and kRows + 1 == sRows:
+                    if sCols +1 < 8 and sRows + 1 < 8:
+                        kCols += 1
+                        sCols += 1
+                        kRows += 1
+                        sRows += 1
+                else:
+                    kCols += 1
+                    kRows += 1
+        if move[0] == 'L' and move[1] == 'B':
+            if kCols -1 >= 0 and kRows +1 < 8:
+                if kCols - 1 == sCols and kRows + 1 == sRows:
+                    if sCols -1 >= 0 and sRows + 1 < 8:
+                        kCols -= 1
+                        sCols -= 1
+                        kRows += 1
+                        sRows += 1
+                else:
+                    kCols -= 1
+                    kRows += 1
+print(cols[kCols]+rows[kRows])
+print(cols[sCols]+rows[sRows])
