@@ -1,0 +1,84 @@
+N, M = map(int, input(). split(' '))
+r, c, d = map(int, input().split(' '))
+maps = []
+visited = [[-1 for i in range(M)] for i in range(N)]
+visited[r][c] = 0
+for i in range(N):
+    infos = list(map(int, input(). split(' ')))
+
+    maps.append(infos)
+
+count = 1
+move = 0
+
+while True:
+    if move == 4:
+        if d == 0:
+            if maps[r+1][c] == 1:
+                break
+            else:
+                r += 1
+                move = 0
+                continue
+        elif d == 1:
+            if maps[r][c-1] == 1:
+                break
+            else:
+                c -= 1
+                move = 0
+                continue
+        elif d == 2:
+            if maps[r-1][c] == 1:
+                break
+            else:
+                r -= 1
+                move = 0
+                continue
+        elif d == 3:
+            if maps[r][c+1] == 1:
+                break
+            else:
+                c += 1
+                move = 0
+                continue
+    if d == 0:
+        if maps[r][c-1] == 0 and visited[r][c-1] == -1:
+            visited[r][c-1] = 0
+            d = 3
+            c -= 1
+            move = 0
+            count += 1
+        else:
+            d = 3
+            move += 1
+    elif d == 1:
+        if maps[r-1][c] == 0 and visited[r-1][c] == -1:
+            visited[r-1][c] = 0
+            d = 0
+            r -= 1
+            move = 0
+            count += 1
+        else:
+            d = 0
+            move += 1
+    elif d == 2:
+        if maps[r][c+1] == 0 and visited[r][c+1] == -1:
+            visited[r][c+1] = 0
+            d = 1
+            c += 1
+            move = 0
+            count += 1
+        else:
+            d = 1
+            move += 1
+    elif d == 3:
+        if maps[r+1][c] == 0 and visited[r+1][c] == -1:
+            visited[r+1][c] = 0
+            d = 2
+            r += 1
+            move = 0
+            count += 1
+        else:
+            d = 2
+            move += 1
+print(count)
