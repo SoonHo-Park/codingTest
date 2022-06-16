@@ -1,0 +1,105 @@
+N, M, x, y, K = map(int, input().split(' '))
+
+maps = []
+diceT = 0
+diceB = 0
+diceP = 0
+diceU = 0
+diceR = 0
+diceL = 0
+for i in range(N):
+    line = list(map(int, input().split(' ')))
+    maps.append(line)
+    
+moves = list(map(int, input().split(' ')))
+
+for move in moves:
+    if move == 1:
+        if y + 1 < M:
+            y += 1
+            diceTtemp = diceT
+            diceBtemp = diceB
+            dicePtemp = diceP
+            diceUtemp = diceU
+            diceRtemp = diceR
+            diceLtemp = diceL
+            diceT = diceTtemp
+            diceB = diceBtemp
+            diceP = diceLtemp
+            diceU = diceRtemp
+            diceR = dicePtemp
+            diceL = diceUtemp
+            if maps[x][y] == 0:
+                maps[x][y] = diceU
+            else:
+                diceU = maps[x][y]
+                maps[x][y] = 0
+        else:
+            continue
+    elif move == 2:
+        if y - 1 >= 0:
+            y -= 1
+            diceTtemp = diceT
+            diceBtemp = diceB
+            dicePtemp = diceP
+            diceUtemp = diceU
+            diceRtemp = diceR
+            diceLtemp = diceL
+            diceT = diceTtemp
+            diceB = diceBtemp
+            diceP = diceRtemp
+            diceU = diceLtemp
+            diceR = diceUtemp
+            diceL = dicePtemp
+            if maps[x][y] == 0:
+                maps[x][y] = diceU
+            else:
+                diceU = maps[x][y]
+                maps[x][y] = 0
+        else:
+            continue
+    elif move == 3:
+        if x - 1 >= 0:
+            x -= 1
+            diceTtemp = diceT
+            diceBtemp = diceB
+            dicePtemp = diceP
+            diceUtemp = diceU
+            diceRtemp = diceR
+            diceLtemp = diceL
+            diceT = dicePtemp
+            diceB = diceUtemp
+            diceP = diceBtemp
+            diceU = diceTtemp
+            diceR = diceRtemp
+            diceL = diceLtemp
+            if maps[x][y] == 0:
+                maps[x][y] = diceU
+            else:
+                diceU = maps[x][y]
+                maps[x][y] = 0
+        else:
+            continue
+    elif move == 4:
+        if x + 1 < N:
+            x += 1
+            diceTtemp = diceT
+            diceBtemp = diceB
+            dicePtemp = diceP
+            diceUtemp = diceU
+            diceRtemp = diceR
+            diceLtemp = diceL
+            diceT = diceUtemp
+            diceB = dicePtemp
+            diceP = diceTtemp
+            diceU = diceBtemp
+            diceR = diceRtemp
+            diceL = diceLtemp
+            if maps[x][y] == 0:
+                maps[x][y] = diceU
+            else:
+                diceU = maps[x][y]
+                maps[x][y] = 0
+        else:
+            continue
+    print(diceP)
