@@ -1,0 +1,32 @@
+import collections
+
+N, M = map(int, input().split(' '))
+maps = []
+starts = []
+for i in range(N):
+    inputs = list(input())
+    maps.append(inputs)
+    for j in range(len(inputs)):
+        if inputs[j] == 'L':
+            starts.append([i, j])
+dic = [[-1, 0], [1, 0], [0, -1], [0, 1]]
+answer = 0
+
+for start in starts:
+    q = collections.deque([[start[0], start[1]]])
+    visited = [[-1 for i in range(M)] for i in range(N)]
+    visited[start[0]][start[1]] = 0
+    while q:
+        x, y = q.popleft()
+        for i in range(4):
+            nx = x + dic[i][0]
+            ny = y + dic[i][1]
+            if 0 <= nx < N and 0 <= ny < M and visited[nx][ny] == -1:
+                if maps[nx][ny] != 'W':
+                    visited[nx][ny] = visited[x][y] + 1
+                    q.append([nx, ny])
+    for map in visited:
+        value = max(map)
+        if answer < value:
+            answer = value
+print(answer)
