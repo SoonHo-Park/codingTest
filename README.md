@@ -18,6 +18,10 @@
 오프라인 풀이법 공유는 우선 목요일만 예정
 
 2022-06-13 ~ 2022-06-15
+1. 뉴스전하기 https://www.acmicpc.net/problem/1135
+2. N으로 표현 https://programmers.co.kr/learn/courses/30/lessons/42895
+
+2022-06-13 ~ 2022-06-15
 1. 다리를 지나는 트럭 (*박순호*) - 프로그래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/42583
 2. 영어 끝말잇기 (*권효집*) - 프로그래머스 레벨2, https://programmers.co.kr/learn/courses/30/lessons/12981
 3. 베스트 앨범 (*권혁찬*) - 프로그래머스 레벨3, https://programmers.co.kr/learn/courses/30/lessons/42579
