@@ -17,6 +17,9 @@
 
 오프라인 풀이법 공유는 우선 목요일만 예정
 
+1. 알파벳 https://www.acmicpc.net/problem/1987
+2. 내리막길 https://www.acmicpc.net/problem/1520
+
 2022-06-13 ~ 2022-06-15
 1. 뉴스전하기 https://www.acmicpc.net/problem/1135
 2. N으로 표현 https://programmers.co.kr/learn/courses/30/lessons/42895
